@@ -6,7 +6,7 @@
 /*   By: jbartosi <jbartosi@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:19:44 by jbartosi          #+#    #+#             */
-/*   Updated: 2023/02/08 14:32:19 by jbartosi         ###   ########.fr       */
+/*   Updated: 2023/02/08 17:15:38 by jbartosi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	draw_julia(t_image *image, t_julia *j)
 	}
 }
 
-int	deal_key(int key, t_box *box)
+int	key_hook(int key, t_box *box)
 {
 	ft_printf("Keypress: %i\n", key);
 	if (key == 65307)
@@ -88,6 +88,12 @@ int	deal_key(int key, t_box *box)
 	return (0);
 }
 
+int	exit_hook(t_box *box)
+{
+	mlx_destroy_window(box->mlx, box->win);
+	exit(0);
+}
+
 int	main(void)
 {
 	t_box	box;
@@ -100,7 +106,8 @@ int	main(void)
 	init_julia(&box.julia);
 	draw_julia(&box.image, &box.julia);
 	mlx_put_image_to_window(box.mlx, box.win, box.image.img, 0, 0);
-	mlx_key_hook(box.win, deal_key, &box);
+	mlx_hook(box.win, 17, 0, exit_hook, &box);
+	mlx_key_hook(box.win, key_hook, &box);
 	mlx_loop(box.mlx);
 	return (0);
 }
