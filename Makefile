@@ -6,7 +6,7 @@
 #    By: jbartosi <jbartosi@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/07 12:29:28 by jbartosi          #+#    #+#              #
-#    Updated: 2023/02/08 16:43:41 by jbartosi         ###   ########.fr        #
+#    Updated: 2023/02/08 19:56:09 by jbartosi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ PRINTF = ft_printf
 LIBFT = ft_printf/libft
 MLX = minilibx
 
-SRC = main.c colors.c
+SRC = main.c colors.c fractal.c hook.c menus.c
 OBJ = $(SRC:.c=.o)
 
 all: lib $(NAME)
