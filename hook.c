@@ -6,7 +6,7 @@
 /*   By: jbartosi <jbartosi@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:52:55 by jbartosi          #+#    #+#             */
-/*   Updated: 2023/02/08 20:49:10 by jbartosi         ###   ########.fr       */
+/*   Updated: 2023/02/09 11:07:01 by jbartosi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,7 @@ int	key_hook(int key, t_box *box)
 		box->fractal.zoom /= 1.05;
 	if (key == 65451)
 		box->fractal.zoom *= 1.05;
-	if (key == 104)
-	{
-		if (box->menu == 0)
-			box->menu = 1;
-		else if (box->menu == 1)
-			box->menu = 0;
-	}
+	update(box);
 	return (0);
 }
 
@@ -52,6 +46,8 @@ int	exit_hook(t_box *box)
 
 int	update(t_box *box)
 {
+	mlx_destroy_image(box->mlx, box->image.img);
+	init_img(box);
 	if (box->fractal.name == 'J')
 		draw_julia(&box->image, &box->fractal);
 	else if (box->fractal.name == 'M')

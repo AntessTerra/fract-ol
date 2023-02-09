@@ -6,7 +6,7 @@
 /*   By: jbartosi <jbartosi@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:59:45 by jbartosi          #+#    #+#             */
-/*   Updated: 2023/02/08 20:49:17 by jbartosi         ###   ########.fr       */
+/*   Updated: 2023/02/09 14:17:09 by jbartosi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,8 @@ typedef struct s_box
 	void		*win;
 	t_fractal	fractal;
 	t_image		image;
-	int			menu;
 }				t_box;
 
-int		create_rgb(int r, int g, int b);
 void	my_mlx_pyxel_put(t_image *image, int x, int y, int color);
 void	init_fractal(t_box *box);
 void	draw_julia(t_image *image, t_fractal *j);
@@ -63,5 +61,6 @@ void	draw_mandel(t_image *image, t_fractal *j);
 int		exit_hook(t_box *box);
 int		key_hook(int key, t_box *box);
 int		update(t_box *box);
+void	init_img(t_box *box);
 
 #endif
