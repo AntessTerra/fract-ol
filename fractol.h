@@ -6,7 +6,7 @@
 /*   By: jbartosi <jbartosi@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:59:45 by jbartosi          #+#    #+#             */
-/*   Updated: 2023/02/09 14:17:09 by jbartosi         ###   ########.fr       */
+/*   Updated: 2023/02/10 11:23:15 by jbartosi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRACTOL_H
 
 # include "colors.h"
+# include "utils.h"
 # include <math.h>
 
 typedef struct s_fractal

@@ -6,7 +6,7 @@
 /*   By: jbartosi <jbartosi@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:19:44 by jbartosi          #+#    #+#             */
-/*   Updated: 2023/02/09 15:56:53 by jbartosi         ###   ########.fr       */
+/*   Updated: 2023/02/10 13:38:46 by jbartosi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 	- HSV to RGB colors ALMOST
 	- One more fractal
 	- Follow zoom aftem mouse cursor
-	- Redo atof!!!
 */
 
 void	my_mlx_pyxel_put(t_image *image, int x, int y, int color)
@@ -50,18 +49,18 @@ int	check_arguments(t_box *box, int argc, char **argv)
 		{
 			init_fractal(box);
 			if (argc == 3)
-				box->fractal.cre = atof(argv[2]);
+				box->fractal.cre = ft_atof(argv[2]);
 			else if (argc == 4)
 			{
-				box->fractal.cre = atof(argv[2]);
-				box->fractal.cim = atof(argv[3]);
+				box->fractal.cre = ft_atof(argv[2]);
+				box->fractal.cim = ft_atof(argv[3]);
 			}
 			return (1);
 		}
 	}
 	ft_printf("%s\n%s\n%s",
-		"Invalid or no arguments. Please try with [J] or [M].",
-		"For [J] you can add params for different looks.",
+		"Invalid or no arguments ./fractol <type> <optoins>",
+		"You can use [J] or [M] and options for different looks.",
 		"Try: ./fractol J -0.77097 -0.085 or ./fractol J -0.65488 -0.4477");
 	exit(0);
 }
