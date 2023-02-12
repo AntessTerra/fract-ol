@@ -6,7 +6,7 @@
 /*   By: jbartosi <jbartosi@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:52:55 by jbartosi          #+#    #+#             */
-/*   Updated: 2023/02/09 11:07:01 by jbartosi         ###   ########.fr       */
+/*   Updated: 2023/02/12 16:21:38 by jbartosi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 int	key_hook(int key, t_box *box)
 {
-	ft_printf("Keypress: %i\n", key);
 	if (key == 65307)
 	{
 		mlx_destroy_window(box->mlx, box->win);

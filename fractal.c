@@ -6,7 +6,7 @@
 /*   By: jbartosi <jbartosi@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:45:14 by jbartosi          #+#    #+#             */
-/*   Updated: 2023/02/10 14:01:53 by jbartosi         ###   ########.fr       */
+/*   Updated: 2023/02/12 16:20:44 by jbartosi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	init_fractal(t_box *box)
 {
-	box->fractal.max_iter = 300;
+	box->fractal.max_iter = 50;
 	box->fractal.zoom = 1;
 	box->fractal.movex = 0;
 	box->fractal.movey = 0.05;
@@ -53,7 +53,8 @@ void	draw_julia(t_image *image, t_fractal *j)
 				if ((j->newre * j->newre + j->newim * j->newim) > 4)
 					break ;
 			}
-			j->color = hsvtorgb(j->i % 256, 255, 255 * (j->i < j->max_iter));
+			j->color = hsvtorgb((j->i + j->crange) % 360, 1, 1
+					* (j->i < j->max_iter));
 			my_mlx_pyxel_put(image, j->x, j->y, j->color);
 		}
 	}
@@ -81,7 +82,8 @@ void	draw_mandel(t_image *image, t_fractal *j)
 				if ((j->newre * j->newre + j->newim * j->newim) > 4)
 					break ;
 			}
-			j->color = hsvtorgb(j->i % 256, 255, 255 * (j->i < j->max_iter));
+			j->color = hsvtorgb((j->i + j->crange) % 360, 1, 1
+					* (j->i < j->max_iter));
 			my_mlx_pyxel_put(image, j->x, j->y, j->color);
 		}
 	}

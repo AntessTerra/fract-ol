@@ -6,7 +6,7 @@
 /*   By: jbartosi <jbartosi@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 12:49:27 by jbartosi          #+#    #+#             */
-/*   Updated: 2023/02/10 13:24:13 by jbartosi         ###   ########.fr       */
+/*   Updated: 2023/02/12 15:44:55 by jbartosi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,16 @@
 #include "minilibx/mlx.h"
 #include "fractol.h"
 
-int	create_rgb(int r, int g, int b, int m)
+int	create_rgb(float fr, float fg, float fb, float fm)
 {
-	return ((r + m) << 16 | (g + m) << 8 | (b + m));
+	int	r;
+	int	g;
+	int	b;
+
+	r = (fr + fm) * 255;
+	g = (fg + fm) * 255;
+	b = (fb + fm) * 255;
+	return (r << 16 | g << 8 | b);
 }
 
 int	hsvtorgb(float h, float s, float v)

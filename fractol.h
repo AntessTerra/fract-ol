@@ -6,7 +6,7 @@
 /*   By: jbartosi <jbartosi@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:59:45 by jbartosi          #+#    #+#             */
-/*   Updated: 2023/02/10 11:23:15 by jbartosi         ###   ########.fr       */
+/*   Updated: 2023/02/12 16:02:25 by jbartosi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_fractal
 	double			pr;
 	double			pi;
 	unsigned int	color;
+	unsigned int	crange;
 	int				max_iter;
 	int				y;
 	int				x;
