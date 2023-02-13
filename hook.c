@@ -6,7 +6,7 @@
 /*   By: jbartosi <jbartosi@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:52:55 by jbartosi          #+#    #+#             */
-/*   Updated: 2023/02/12 16:21:38 by jbartosi         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:16:04 by jbartosi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	update(t_box *box)
 		draw_julia(&box->image, &box->fractal);
 	else if (box->fractal.name == 'M')
 		draw_mandel(&box->image, &box->fractal);
+	else if (box->fractal.name == 'B')
+		draw_burning(&box->image, &box->fractal);
 	mlx_put_image_to_window(box->mlx, box->win, box->image.img, 0, 0);
 	return (0);
 }
